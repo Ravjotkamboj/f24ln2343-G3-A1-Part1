@@ -1,0 +1,62 @@
+// Illustration of Classes and Objects in a College Enrollment System
+class Person {
+    // Attributes (Encapsulation)
+    private String name;
+    private int age;
+
+    // Constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Methods (Abstraction)
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+
+// Inheritance and Polymorphism
+class Student extends Person {
+    private String major;
+
+    public Student(String name, int age, String major) {
+        super(name, age);
+        this.major = major;
+    }
+
+    // Method to display student details
+    public void displayInfo() {
+        System.out.println(getName() + " is " + getAge() + " years old and majors in " + major + ".");
+    }
+}
+
+class Professor extends Person {
+    private String department;
+
+    public Professor(String name, int age, String department) {
+        super(name, age);
+        this.department = department;
+    }
+
+    // Method to display professor details
+    public void displayInfo() {
+        System.out.println(getName() + " is " + getAge() + " years old and teaches in the " + department + " department.");
+    }
+}
+
+public class CollegeEnrollmentDemo
+extends Object
+ {
+    public static void main(String[] args) {
+        Student student = new Student("Alice", 20, "Computer Science");
+        Professor professor = new Professor("Dr. Smith", 45, "Mathematics");
+
+        student.displayInfo();  
+        professor.displayInfo(); 
+    }
+}
